@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Viviendas.h"
+#include "input.h"
 #define VACIO 1
 
 	int MenuOpciones()
@@ -18,31 +19,7 @@
 
 		return opciones;
 	}
-	int utn_getNumero(int *pResultado, char* mensaje,char* mensajeError,int minimo,int maximo,int reintentos)
-	{
-	    int retorno = -1;
-	    int bufferInt;
-	        if(pResultado!=NULL && mensaje!= NULL && mensajeError!= NULL && minimo <= maximo && reintentos >=0)
-	        {
-	            do
-	            {
-	                printf("%s",mensaje);
-	                scanf("%d",&bufferInt);
-	                if(bufferInt >= minimo && bufferInt <= maximo)
-	                {
-	                    *pResultado = bufferInt;
-	                    retorno = 0;
-	                    break;
-	                }
-	                else
-	                {
-	                    printf("%s",mensajeError);
-	                    reintentos--;
-	                }
-	            }while(reintentos >=0);
-	        }
-	    return retorno;
-	}
+
 	void inicializarVivienda(eVivienda *lista , int tam)
 	{
 		int i;
@@ -54,10 +31,16 @@
 
 
 	}
-	int CargaDeViviendas(eVivienda *lista, int tam, int idVivienda)
+	eVivienda AltaDeUnaViviendas(void)
 	{
-		int retorno =0;
+		eVivienda personas;
 
 
-		return retorno;
+		getString(personas.calle,"ingrese nombre de calles ",5);
+		personas.cantidadPersonas = PedirNumeros("ingrese cantidad de personas \n", "Error ingrese bien la cantidad:\n", 1, 20);
+		personas.cantidadHabitaciones = PedirNumeros("Ingrese cantidad de habitaciones en la vivienda:\n", "ingrese un valor correcto:\n", 1, 5);
+		personas.tipoVivienda = PedirNumeros("ingrese Tipo de Vivienda 1)CASA, -2)DEPARTAMENTO, -3)CASILLA, -4)RANCHO:\n", "ingrese los valores predertieminados",1 ,4 );
+		personas.legajoCensista = PedirNumeros("ingrese legajo del censista", "Error censiste no exite", 2000, 9999);
+
+		return personas;
 	}

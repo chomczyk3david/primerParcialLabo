@@ -15,4 +15,4 @@
 void getString(char cadena[],char mensaje[],int tam);
 float PedirFlotante(char mensaje[], char mensajeError[], int min,int max);
 int PedirNumeros(char mensaje[], char mensajeError[], int min,int max);
-
+int utn_getNumero(int *pResultado, char* mensaje,char* mensajeError,int minimo,int maximo,int reintentos);

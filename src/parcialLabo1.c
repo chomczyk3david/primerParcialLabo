@@ -20,12 +20,13 @@ int main(void) {
 	opcion=0;
 	eVivienda casas;
 
-	inicializarVivienda(casas , T);
+	inicializarVivienda(&casas , T);
 
 	do{
 		switch(MenuOpciones())
 		{
 		case 1:
+
 		break;
 		case 2:
 		break;

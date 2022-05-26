@@ -9,8 +9,8 @@
 #define VIVIENDAS_H_
 
 
-
 #endif /* VIVIENDAS_H_ */
+
 
 typedef struct
 {
@@ -32,6 +32,5 @@ typedef struct
 }eCencista;
 
 int MenuOpciones();
-int utn_getNumero(int *pResultado, char* mensaje,char* mensajeError,int minimo,int maximo,int reintentos);
 void inicializarVivienda(eVivienda *lista, int tam);
-int CargaDeViviendas(eVivienda *lista, int tam, int idVivienda);
+ eVivienda AltaDeUnaViviendas(void);

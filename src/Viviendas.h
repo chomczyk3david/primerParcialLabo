@@ -34,3 +34,6 @@ typedef struct
 int MenuOpciones();
 void inicializarVivienda(eVivienda *lista, int tam);
  eVivienda AltaDeUnaViviendas(void);
+ int CargaDeViviendas(eVivienda, *lista, int tam, int idVivienda);
+ void MostrarUnCensista(eCencista *UnCencista);
+ void MostrarUnaVivienda(eVivienda *UnaVivienda);

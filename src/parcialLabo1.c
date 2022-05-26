@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "Viviendas.h"
 #define T 100
 int main(void) {
@@ -26,7 +27,7 @@ int main(void) {
 		switch(MenuOpciones())
 		{
 		case 1:
-
+			AltaDeUnaViviendas(casas,T);
 		break;
 		case 2:
 		break;

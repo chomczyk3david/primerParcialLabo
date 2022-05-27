@@ -10,7 +10,12 @@
 #include "input.h"
 #define VACIO 1
 
-	int MenuOpciones()
+void CensistaHarcodeado(eCencista *lista,int tam, int legajo, char nombre, int edad,int telefono)
+{
+	//int listas;
+	 //{{100,'Ana',34,1203-2345},{101,'Juan',24,4301-54678},{102,'Sol',47,5902-37487}};
+}
+int MenuOpciones()
 	{
 		int opciones;
 		printf("**************************ELIJA LAS OPCIONES ***************************************\n");
@@ -20,7 +25,7 @@
 		return opciones;
 	}
 
-	void inicializarVivienda(eVivienda *lista , int tam)
+void inicializarVivienda(eVivienda *lista , int tam)
 	{
 		int i;
 		if(lista!=NULL && tam >0){
@@ -32,7 +37,7 @@
 
 
 	}
-	eVivienda AltaDeUnaViviendas(void)
+eVivienda AltaDeUnaViviendas(void)
 	{
 		eVivienda personas;
 
@@ -53,10 +58,10 @@ int CargaDeViviendas(eVivienda *lista, int tam, int idVivienda)
 		{
 			for(i=0;i<tam;i++)
 			{
-				if(*lista->isEmpty == VACIO)
+				if(lista->isEmpty == VACIO)
 				{
 					*lista = AltaDeUnaViviendas();
-					*lista->idVivienda=idVivienda;
+					lista->idVivienda=idVivienda;
 					idVivienda++;
 					retorno =0;
 				}
@@ -68,7 +73,7 @@ return retorno;
 void MostrarUnCensista(eCencista *UnCencista)
 {
 	printf("========LISTA DE CENSISTA=========");
-	printf("|LEGAJO CENSISTA| NOMBRE | EDAD | N° DE CELULAR| \n ");
+	printf("|LEGAJO CENSISTA| NOMBRE | EDAD | N° DE TELEFONO | \n ");
 	printf(" %d  %s  %d  %d \n", UnCencista->legajoCensista,UnCencista->nombre,
 								 UnCencista->edad,UnCencista->telefono);
 }
@@ -76,7 +81,7 @@ void MostrarUnaVivienda(eVivienda *UnaVivienda)
 {
 	printf("========LISTA DE VIVIENDAS================");
 	printf("| CALLE | CANTIDAD DE PERSONAS | CANTIDAD DE HABITACIONES | TIPO DE VIVIENDA |\n");
-	printf(" %s  %d  %d  %d  %d \n",UnaVivienda->calle,UnaVivienda->cantidadPersonas,
+	printf(" %s  %d  %d  %d  \n",UnaVivienda->calle,UnaVivienda->cantidadPersonas,
 									UnaVivienda->cantidadHabitaciones,UnaVivienda->tipoVivienda);
 
 }

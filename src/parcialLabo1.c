@@ -14,6 +14,7 @@
 #include "Viviendas.h"
 #define T 100
 int main(void) {
+
 	setbuf(stdout,NULL);
 	int opcion;
 	int idVivienda;
@@ -24,10 +25,11 @@ int main(void) {
 	inicializarVivienda(&casas , T);
 
 	do{
-		switch(MenuOpciones())
+		opcion = MenuOpciones();
+		switch(opcion)
 		{
 		case 1:
-			AltaDeUnaViviendas(casas,T);
+
 		break;
 		case 2:
 		break;
@@ -44,6 +46,6 @@ int main(void) {
 
 	}while(opcion!=6);
 
-	puts("!!!Hello World!!!");
+
 	return EXIT_SUCCESS;
 }

@@ -12,13 +12,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Viviendas.h"
-#define T 100
+#define T 3
+
 int main(void) {
 
 	setbuf(stdout,NULL);
+
 	int opcion;
 	int idVivienda;
-	idVivienda =0;
+	idVivienda =2000;
 	opcion=0;
 	eVivienda casas;
 
@@ -29,6 +31,12 @@ int main(void) {
 		switch(opcion)
 		{
 		case 1:
+				if(!CargaDeViviendas(&casas, T, idVivienda))
+				{
+					printf("Carga exitosa:\n");
+				}else{
+					printf("no se pudo hacer su ingreso:\n");
+				}
 
 		break;
 		case 2:
@@ -38,6 +46,7 @@ int main(void) {
 		case 4:
 			break;
 		case 5:
+
 			break;
 		case 6:
 			break;
